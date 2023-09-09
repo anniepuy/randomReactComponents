@@ -1,4 +1,5 @@
-import { MouseEvent } from "react";
+import { useState } from "react";
+
 
 function ListGroup () {
     const bodypart = [
@@ -14,12 +15,10 @@ function ListGroup () {
         'Abs'
     ];
 
-    const selectedIndex = 0;
+    //State hook
+    const [selectedIndex, setSelectedIndex] = useState(-1)
 
     const bodyPartSelected = [];
-    //Turn the array into a list
-
-    const handleClick = (event: MouseEvent ) => console.log(event);
 
     return (
         <>
@@ -28,9 +27,12 @@ function ListGroup () {
             <ul className="list-group">
                 {bodypart.map((bodypart, index) => (
                     <li 
-                    className={ selectedIndex === index ? 'list-group-item active' : 'list-group-item'} 
+                    className={ 
+                        selectedIndex === index 
+                        ? 'list-group-item active' 
+                        : 'list-group-item'} 
                     key = {bodypart}
-                    onClick={handleClick}
+                    onClick={()=> {setSelectedIndex(index);}}
                     >
                         {bodypart}
                     </li>
