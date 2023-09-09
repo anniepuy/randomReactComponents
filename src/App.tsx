@@ -1,5 +1,6 @@
 import ListGroup from './components/ListGroup';
 import PropList from './components/PropList';
+import Alert from './components/Alert';
 
 function App() {
   const day = [
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <div>
+      <Alert text="Hello World"/>
       <ListGroup />
       <PropList  items={day} heading="Select the day:" onSelectItem={handleSelectItem}/>
     </div>
