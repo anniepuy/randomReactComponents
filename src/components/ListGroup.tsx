@@ -19,8 +19,10 @@ function ListGroup () {
             <h1>Body Part</h1>
             {bodyPartSelected.length === 0 && <p>No body part selected</p>}
             <ul className="list-group">
-                
-                {bodypart.map((bodypart) => (<li key = {bodypart}>{bodypart}</li>))}  
+                {bodypart.map((bodypart) => (
+                    <li className = "list-group-item" key = {bodypart}
+                    onClick={() => console.log(bodypart)}>{bodypart}</li>
+                ))}  
             </ul>
         </>
      );
