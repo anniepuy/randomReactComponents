@@ -14,18 +14,21 @@ function ListGroup () {
         'Abs'
     ];
 
-    const bodyPartSelected = []
+    const selectedIndex = 0;
+
+    const bodyPartSelected = [];
     //Turn the array into a list
 
-    const handleClick = (event: MouseEvent ) => console.log(event)
+    const handleClick = (event: MouseEvent ) => console.log(event);
 
     return (
         <>
             <h1>Body Part</h1>
             {bodyPartSelected.length === 0 && <p>No body part selected</p>}
             <ul className="list-group">
-                {bodypart.map((bodypart) => (
-                    <li className="list-group-item" 
+                {bodypart.map((bodypart, index) => (
+                    <li 
+                    className={ selectedIndex === index ? 'list-group-item active' : 'list-group-item'} 
                     key = {bodypart}
                     onClick={handleClick}
                     >
