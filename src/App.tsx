@@ -11,10 +11,14 @@ function App() {
     'Saturday'
   ];
 
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
+
   return (
     <div>
       <ListGroup />
-      <PropList  items={day} heading="Select the day:"/>
+      <PropList  items={day} heading="Select the day:" onSelectItem={handleSelectItem}/>
     </div>
   )
 }

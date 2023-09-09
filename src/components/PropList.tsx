@@ -4,9 +4,12 @@ import { useState } from "react";
 interface Props {
     items: string[];
     heading: string;
+    //(item: string) => void
+    //on type of event
+    onSelectItem: (item: string) => void;
 }
 
-function PropList ({items, heading}:Props) {
+function PropList ({items, heading, onSelectItem}:Props) {
     //State hook
     const [selectedIndex, setSelectedIndex] = useState(-1)
 
@@ -14,14 +17,17 @@ function PropList ({items, heading}:Props) {
         <>
             <h1>{heading}</h1>
             <ul className="list-group">
-                {items.map((item, index) => (
+                {items.map((item,index) => (
                     <li 
                     className={ 
                         selectedIndex === index 
                         ? 'list-group-item active' 
                         : 'list-group-item'} 
                     key = {item}
-                    onClick={()=> {setSelectedIndex(index);}}
+                    onClick={()=> {
+                        setSelectedIndex(index);
+                        onSelectItem(item);
+                    }}
                     >
                         {item}
                     </li>
