@@ -2,10 +2,19 @@ import ListGroup from './components/ListGroup';
 import PropList from './components/PropList';
 
 function App() {
+  const day = [
+    'Monday',
+    'Tuesda',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ];
+
   return (
     <div>
       <ListGroup />
-      <PropList />
+      <PropList  items={day} heading="Select the day:"/>
     </div>
   )
 }

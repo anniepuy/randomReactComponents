@@ -1,34 +1,29 @@
 import { useState } from "react";
 
 // {items: [], heading: string}
-interface PropListProps {
+interface Props {
     items: string[];
     heading: string;
 }
 
-function PropList (props: PropListProps) {
-    
-
+function PropList ({items, heading}:Props) {
     //State hook
     const [selectedIndex, setSelectedIndex] = useState(-1)
 
-    const bodyPartSelected = [];
-
     return (
         <>
-            <h1>Body Part</h1>
-            {bodyPartSelected.length === 0 && <p>No body part selected</p>}
+            <h1>{heading}</h1>
             <ul className="list-group">
-                {bodypart.map((bodypart, index) => (
+                {items.map((item, index) => (
                     <li 
                     className={ 
                         selectedIndex === index 
                         ? 'list-group-item active' 
                         : 'list-group-item'} 
-                    key = {bodypart}
+                    key = {item}
                     onClick={()=> {setSelectedIndex(index);}}
                     >
-                        {bodypart}
+                        {item}
                     </li>
                 ))}  
             </ul>
