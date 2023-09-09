@@ -1,19 +1,13 @@
 import { useState } from "react";
 
+// {items: [], heading: string}
+interface PropListProps {
+    items: string[];
+    heading: string;
+}
 
-function PropList () {
-    const bodypart = [
-        'Shoulders',
-        'Chest',
-        'Back',
-        'Biceps',
-        'Triceps',
-        'Hamstrings',
-        'Quads',
-        'Glutes',
-        'Calves',
-        'Abs'
-    ];
+function PropList (props: PropListProps) {
+    
 
     //State hook
     const [selectedIndex, setSelectedIndex] = useState(-1)
