@@ -4,7 +4,7 @@ import PropList from './components/PropList';
 function App() {
   const day = [
     'Monday',
-    'Tuesda',
+    'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
