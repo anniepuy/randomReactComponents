@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <Button color="secondary" onClick ={() => console.log('Clicked')}>My Button</Button>
+      <Button color="primary" onClick ={() => console.log('Clicked')}>My Button</Button>
       <Alert>
         Hello <span>World</span>
       </Alert>
