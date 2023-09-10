@@ -2,7 +2,7 @@ import { useState } from "react";
 import ListGroup from './components/ListGroup';
 import PropList from './components/PropList';
 import Alert from './components/Alert';
-import Button from './components/Button';
+import Button from './components/Button/Button';
 import Icon from './components/Icon';
 
 function App() {
