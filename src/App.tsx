@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ListGroup from './components/ListGroup';
 import PropList from './components/PropList';
 import Alert from './components/Alert';
@@ -17,12 +18,12 @@ function App() {
     console.log(item);
   };
 
+  const [alertVisible, setAlertVisibility] = useState(false);
+
   return (
     <div>
-      <Button onClick ={() => console.log('Clicked')}>My Button</Button>
-      <Alert>
-        Hello <span>World</span>
-      </Alert>
+      <Button onClick ={() => setAlertVisibility(true)}>My Button</Button>
+       { alertVisible && <Alert>My Alert</Alert> }
       <ListGroup />
       <PropList  items={day} heading="Select the day:" onSelectItem={handleSelectItem}/>
     </div>
