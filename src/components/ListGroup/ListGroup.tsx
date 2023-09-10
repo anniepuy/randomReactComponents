@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styles from './ListGroup.css';
+import './ListGroup.css';
+import styled from 'styled-components';
 
 function ListGroup () {
     const bodypart = [
