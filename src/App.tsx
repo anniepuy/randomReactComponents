@@ -3,6 +3,7 @@ import ListGroup from './components/ListGroup';
 import PropList from './components/PropList';
 import Alert from './components/Alert';
 import Button from './components/Button';
+import Icon from './components/Icon';
 
 function App() {
   const day = [
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div>
+      <Icon />
       <Button onClick ={() => setAlertVisibility(true)}>My Button</Button>
        { alertVisible && <Alert onClose={()=> setAlertVisibility(false)}>My Alert</Alert> }
       <ListGroup />

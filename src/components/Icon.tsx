@@ -1,8 +1,10 @@
-import ( BsFillCalendarFill ) from 
+import {BsFillCalendarFill} from 'react-icons/bs';
 
 function Icon() {
     return (
-        <div></div>
+        <div>
+            <BsFillCalendarFill />
+        </div>
     )
 }
 
