@@ -2,8 +2,9 @@ import { useState } from "react";
 import ListGroup from './components/ListGroup';
 import PropList from './components/PropList';
 import Alert from './components/Alert';
-import Button from './components/Button/Button';
+import Button from './components/Button';
 import Icon from './components/Icon';
+import Name from './components/Name';
 
 function App() {
   const day = [
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div>
+      <Name />
       <Icon />
       <Button onClick ={() => setAlertVisibility(true)}>My Button</Button>
        { alertVisible && <Alert onClose={()=> setAlertVisibility(false)}>My Alert</Alert> }
