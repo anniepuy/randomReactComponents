@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <Button onClick ={() => setAlertVisibility(true)}>My Button</Button>
-       { alertVisible && <Alert>My Alert</Alert> }
+       { alertVisible && <Alert onClose={()=> setAlertVisibility(false)}>My Alert</Alert> }
       <ListGroup />
       <PropList  items={day} heading="Select the day:" onSelectItem={handleSelectItem}/>
     </div>
