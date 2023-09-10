@@ -1,6 +1,17 @@
 import { useState } from "react";
-import './ListGroup.css';
 import styled from 'styled-components';
+
+interface ListItemProps {
+    active: boolean;
+}
+const List = styled.ul`
+    list-style: none;
+    padding: 10px;
+`
+const ListItem = styled.li<ListItemProps>`
+    padding: 5px 0px;
+    background:${props => props.active ? 'blue' : "yellow"}
+`
 
 function ListGroup () {
     const bodypart = [
@@ -17,7 +28,7 @@ function ListGroup () {
     ];
 
     //State hook
-    const [selectedIndex, setSelectedIndex] = useState(-1)
+    const [selectedIndex, setSelectedIndex] = useState(0)
 
     const bodyPartSelected = [];
 
@@ -25,20 +36,17 @@ function ListGroup () {
         <>
             <h1>Body Part</h1>
             {bodyPartSelected.length === 0 && <p>No body part selected</p>}
-            <ul className="list-group">
+            <List>
                 {bodypart.map((bodypart, index) => (
-                    <li 
-                    className={ 
-                        selectedIndex === index 
-                        ? 'list-group-item active' 
-                        : 'list-group-item'} 
-                    key = {bodypart}
-                    onClick={()=> {setSelectedIndex(index);}}
+                    <ListItem
+                        active = {index === selectedIndex}
+                        key = {bodypart}
+                        onClick={()=> {setSelectedIndex(index);}}
                     >
                         {bodypart}
-                    </li>
+                    </ListItem>
                 ))}  
-            </ul>
+            </List>
         </>
      );
 }
