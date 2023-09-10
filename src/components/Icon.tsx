@@ -3,7 +3,7 @@ import {BsFillCalendarFill} from 'react-icons/bs';
 function Icon() {
     return (
         <div>
-            <BsFillCalendarFill />
+            <BsFillCalendarFill color="red" size="40"/>
         </div>
     )
 }
